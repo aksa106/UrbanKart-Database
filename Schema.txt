@@ -1,0 +1,56 @@
+
+PROJECT : UrbanKart
+
+
+
+UrbanKart is a fictional ecommerce company created
+to practice real-world database design and SQL analysis.
+
+This project simulates how ecommerce businesses store,
+manage, and analyze customer, product, and order data
+using Microsoft SQL Server.
+
+
+-------------------------------------------------------------------
+
+
+TABLE DESIGN & SCHEMA-------------------
+
+
+1. CUSTOMERS TABLE
+
+-The Customer table just modelling for basic account information for users signing up on the UrbanKart ecommerce platform
+
+-Just - identity, contact info, account creation tracking
+
+
+SCHEMA -- Customers(CustomerID, FirstName, LastName, Email, Phone, CreatedAt)
+
+
+----------------------------------
+
+2. PRODUCT TABLE
+
+-store all of the sellable products listed on UrbanKart
+
+SCHEMA -- Products(ProductID, ProductName, Category, Brand, Price, StockQty)
+
+ProductID - uniquely identifies every product in the system, it can be used for inventory tracking, Orders, relationship with other tables 
+
+Category - Groups products into business categories , useful for, filtering , analytics, dashboards, recommendations 
+
+----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
