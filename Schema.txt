@@ -39,15 +39,28 @@ ProductID - uniquely identifies every product in the system, it can be used for 
 
 Category - Groups products into business categories , useful for, filtering , analytics, dashboards, recommendations 
 
+Price - we chose DECIMAL datatype for price because money should store precise values FLOAT can create rounding inaccuracies in financial data.
 ----------------------------------------
 
+3.PRODUCT TABLE
+
+The Orders table stores all purchase transactions made on the UrbanKart ecommerce platform.
+It connects customers and products to track who bought what, in what quantity, and when.
+This table is the foundation for sales analysis, revenue tracking, and order history.
+
+SCHEMA -- Orders (OrderID, CustomerID, ProductID, Quantity, TotalAmount, OrderDate)
+
+
+Foreign key:  -- referential integrity
+cutomer table - customerID - Primary key , customer will always exist
+ORders table - customerID refrences CustomerID of Customers table 
+
+FOREIGN KEY(COLUMN_NAME),    [same column in both tables]
+REFERENCES TABLE_NAME(COLUMN_NAME)  [table name - table we are connecting our current table to]
 
 
 
-
-
-
-
+------------------------------------------------------------------------------
 
 
 
