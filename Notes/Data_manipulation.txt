@@ -1,10 +1,84 @@
 
 
+DML - Data Manipulation
+-> works with actual data inside tables
+
+we'll now manipulate business data
+
+### Main commands ###
+
+[INSERT , UPDATE , DELETE]
+
+
+* INSERT = Add new data, new rows into a table.
+
+``` INSERT INTO  Table_Name  
+    VALUES ();  --inserts data into all cols
+    depends on completely on column order
 
 
 
+    INSERT INTO Table_Name (column1, column3, column4, column6)
+    VALUES (Val1, --)
+
+    Inserts into specific columns
+
+---------------------------------------------------------------------
+
+* UPDATE = Modifies an existing data like - Product price changes, Stock Qty changes , Customer updates any of their personal info in their existing account
 
 
+``` UPDATE Table_Name
+
+    SET Column1 = xyz
+
+    WHERE Column2 = 2;  -- without where - ALL rows get repeated
+--------------------------------------------------------------------
+
+[ Danger :- missing where clause -- can cause to entire table update accidently]
+
+
+* DELETE = Used when removing rows from a table [Danger : If we use delete without where it will cause the entire table to be deletec]
+
+
+```DELETE FROM Table_Name
+   WHERE Column1 = xyz;         --without where = Entire table gets deleted
+
+-----------------------------------------------------------
+
+* COPY Data = used for copying rows/queries from one table into another,
+used for - backups, temp analysis etc
+
+```INSERT INTO Table_Name1
+   SELECT * FROM Table_Name2;  
+    
+    [u can also specifiy,particular col in select]
+
+-------------------------------------------------------
+
+
+* TEMP TABLES = temperory working tables
+
+CREATE TABLE #temp1(
+
+    ProductName  
+        VARCHAR(100),
+
+    Price        
+        DECIMAL(10,2)
+);
+
+
+Insert INTO ##Temp2 (Col1,Col2)   --specific cols
+SELECT Col1, COl2 
+FROM Table_Name1
+
+
+SELECT *                 -- full table
+INTO ##Temp2
+From Table_Name2
+
+----------------------------------------------------------------------
 
 
 
