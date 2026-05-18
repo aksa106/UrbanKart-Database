@@ -1,0 +1,88 @@
+
+Schema Modification
+
+
+
+1. ALTER TABLE []
+Modifies an already existing table structure.
+
+
+
+2. ADD COLUMN []
+Used for adding new data.
+
+``` ALTER TABLE Customers
+    ADD City NVARCHAR(50)  -- ADDS a new COLUMN to existing table
+
+
+
+3. ALTER A COLUMN
+used to modify an already existing Column's Datatype/Size.
+
+``` ALTER TABLE Customers
+    ALTER COLUMN Email NVARCHAR(150);
+
+    we just modified the existing column's Datatype
+
+
+4. DROP COLUMN 
+Used to remove unecessary column
+
+ALTER TABLE 
+DROP COLUMN City;
+
+-Delete column permanently
+
+
+5. DROP CONSTRAINT
+Used when existing validation/business rule becomes wrong
+
+``` ALTER TABLE Products
+    DROP CONSTRAINT UQ__Products__A9D10534;
+
+
+ALTER changes schema after database already exists.
+
+
+------------------------------------------------------------------
+
+
+DELETE
+→ removes selected rows
+→ can use WHERE
+→ keeps table structure
+→ slower, logged row-by-row
+
+TRUNCATE
+→ removes ALL rows instantly
+→ no WHERE
+→ keeps table structure
+→ faster, resets IDENTITY usually
+
+DROP
+→ completely deletes entire table itself
+→ structure + data both gone
+
+
+
+-------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

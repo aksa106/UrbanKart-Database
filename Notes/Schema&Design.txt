@@ -33,7 +33,7 @@ SCHEMA -- Customers(CustomerID, FirstName, LastName, Email, Phone, CreatedAt)
 
 -store all of the sellable products listed on UrbanKart
 
-SCHEMA -- Products(ProductID, ProductName, Category, Brand, Price, StockQty)
+SCHEMA -- Products(ProductID, ProductName, Category,  Price, StockQty)
 
 ProductID - uniquely identifies every product in the system, it can be used for inventory tracking, Orders, relationship with other tables 
 
@@ -42,7 +42,7 @@ Category - Groups products into business categories , useful for, filtering , an
 Price - we chose DECIMAL datatype for price because money should store precise values FLOAT can create rounding inaccuracies in financial data.
 ----------------------------------------
 
-3.PRODUCT TABLE
+3.ORders TABLE
 
 The Orders table stores all purchase transactions made on the UrbanKart ecommerce platform.
 It connects customers and products to track who bought what, in what quantity, and when.
