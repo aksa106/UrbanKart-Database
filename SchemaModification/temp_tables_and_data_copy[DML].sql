@@ -43,27 +43,27 @@ COPYING DATA [Insert into]
 -----------------------------------------------------------------------
 
 SELECT Top 5 *
-INTO #TempProducts
+INTO ##TempProducts
 FROM Products;
 
-select * from #TempProducts
+select * from ##TempProducts
 
 ----------------------------------------------------------------
 
 SELECT Top 5 *
-INTO #TempCustomers
+INTO ##TempCustomers
 FROM Customers;
 
 SELECT * 
-FROM #TempCustomers
+FROM ##TempCustomers
 --------------------------------------------------------------
 
 SELECT Top 5 *
-INTO #TempOrders
+INTO ##TempOrders
 FROM Orders;
 
 SELECT * 
-FROM #TempOrders
+FROM ##TempOrders
 
 
 -----------------------------------------------------------
@@ -83,7 +83,7 @@ FROM #TempOrders
 -- copies all rows from Customers
 -- → into already existing #TempCustomers
 
-INSERT INTO #TempCustomers
+INSERT INTO ##TempCustomers
 SELECT * 
 FROM Customers;
 ---------------------------------------------------------------------------
@@ -105,7 +105,7 @@ FROM Customers;
 
 ----------------------------------------------------------------------------
 
-INSERT INTO #TempCustomers(
+INSERT INTO ##TempCustomers(
 
     FirstName,
     LastName,
@@ -125,12 +125,12 @@ FROM Customers
 ORDER BY CustomerID DESC;
     
 
-select * from #TempCustomers
+select * from ##TempCustomers
 
 ------------------------------------------------------------------------
 --SCHEMA -- Products(ProductID, ProductName, Category, Price, StockQty)
 
-INSERT INTO #TempProducts(
+INSERT INTO ##TempProducts(
     ProductName,
     Category,
     Price,
@@ -146,7 +146,7 @@ SELECT  TOP 5
 FROM Products
 ORDER BY ProductID DESC;
 
-select * from #TempProducts
+select * from ##TempProducts
 
 
 ---------------------------------------------------------------------
@@ -155,7 +155,7 @@ select * from #TempProducts
 
 --Skip only IDENTITY columns during INSERT INTO SELECT, but still copy foreign key reference columns like CustomerID and ProductID.
 
-INSERT INTO #TempOrders(
+INSERT INTO ##TempOrders(
 
     CustomerID,
     ProductID,
