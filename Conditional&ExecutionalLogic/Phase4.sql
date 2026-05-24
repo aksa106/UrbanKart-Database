@@ -54,7 +54,7 @@ Select
             3
         End 
         
---
+----------------------------------------------------------------
 
 -- Show:
 
@@ -76,20 +76,87 @@ Select
 -- Very High → Medium → Low
 
 
+select 
+    ProductName,
+    StockQty,
+
+Case 
+    When StockQty > 50 
+        Then 'Very High'
+            When StockQty between 20 and 50
+                Then 'Medium'
+
+Else 
+    'Low'
+End   
+    [StockStatus]
+
+From 
+    PRODUCTS
+
+ORDER BY 
+
+Case 
+    When StockQty > 50
+        Then 1
+            When StockQty between 20 and 50
+                Then 2
+Else 
+    3
+
+End 
+
+-------------------------------------------------------------------
+
+-- Show:
+
+-- ProductName
+-- Category
+-- Price
+
+-- Create:
+
+-- ProductPriority
+
+-- Rules:
+
+-- Electronics with price > 50000 → 'Top Priority'
+-- Electronics with price <= 50000 → 'Medium Priority'
+-- all remaining products → 'Low Priority'
+
+-- Then sort results in this order:
+
+-- Top Priority → Medium Priority → Low Priority
 
 
+Select 
+    ProductName,
+    Category,
+    Price,
 
+Case 
+    When Category = 'Electronics' AND price > 50000
+        Then 'Top Priority'
+            When Category = 'Electronics' AND price <= 50000
+                Then 'Medium Priority'
+Else 
+    'Low'
 
+End  
+    [ProductPriority]
 
+from 
+    Products 
 
+Order By 
 
-
-
-
-
-
-
-
-
-
-
+Case 
+    When Category = 'Electronics' AND price > 50000
+        Then 1
+            When Category = 'Electronics' AND price <= 50000
+                Then 2 
+    
+Else 
+    3
+End  
+    
