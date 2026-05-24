@@ -54,9 +54,26 @@ Select
             3
         End 
         
+--
 
+-- Show:
 
+-- ProductName
+-- StockQty
 
+-- Create:
+
+-- StockStatus
+
+-- Rules:
+
+-- StockQty > 50 → 'Very High'
+-- StockQty between 20 and 50 → 'Medium'
+-- else → 'Low'
+
+-- Then sort results in this business order:
+
+-- Very High → Medium → Low
 
 
 
